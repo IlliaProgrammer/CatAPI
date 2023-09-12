@@ -1,0 +1,13 @@
+.back_button {
+    width: 2.5rem;
+    height: 2.5rem;
+    flex-shrink: 0;
+    background-image: url(../../../assets/svg/default/backgr.svg);
+    border: none;
+}
+
+.arrow {
+    width: 1.25rem;
+    height: 1.25rem;
+    flex-shrink: 0;
+}

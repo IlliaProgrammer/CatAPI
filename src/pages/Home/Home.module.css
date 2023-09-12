@@ -1,0 +1,18 @@
+
+
+
+.wrapper {
+    background-color: #fbe0dc;
+    width: 42.5rem;
+    height: 52.5rem;
+    border-radius: 1.25rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.wr_img {
+    width: 48.4375rem;
+    height: 56.25rem;
+    flex-shrink: 0;
+}

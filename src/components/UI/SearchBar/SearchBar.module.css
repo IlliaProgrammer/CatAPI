@@ -1,0 +1,20 @@
+.input_bar {
+    width: 29.375rem;
+    height: 3.75rem;
+    flex-shrink: 0;
+    border-radius: 1.25rem;
+    border: #FFF;
+    background: #FFF;
+    padding-left: 1.25rem;
+    display: flex;
+    align-items: center;
+}
+
+.input_bar::placeholder {
+    color: #8C8C8C;
+    font-family: Jost;
+    font-size: 1.25rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 1.875rem;
+}

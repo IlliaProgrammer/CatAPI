@@ -1,0 +1,131 @@
+.logo{
+    display: flex;
+    padding-right: 0px;
+    justify-content: start;
+    align-items: center;
+    gap: 0.49338rem;
+    flex-shrink: 0;
+}
+
+.paw {
+    width: 1.5rem;
+    height: 1.5rem;
+    flex-shrink: 0;
+}
+
+.title {
+    height: 0.78481rem;
+}
+
+.greet {
+    color: #1D1D1D;
+    font-family: Jost;
+    font-size: 2.75rem;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 3.625rem;
+    margin-top: 5rem;
+}
+
+.info {
+    color: #8C8C8C;
+    font-family: Jost;
+    font-size: 1.25rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    margin-top: 0.62rem;
+}
+
+.navigation {
+    margin-top: 3.75rem;
+}
+
+.navigation_title {
+    color: #1D1D1D;
+    font-family: Jost;
+    font-size: 1.25rem;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+    height: 1.8rem;
+    margin-bottom: 1.25rem;
+}
+
+.navigation_buttons {
+    display: flex;
+    justify-content: space-around;
+    list-style: none;
+}
+
+
+.navigation_img1 {
+    display: flex;
+    width: 8.625rem;
+    height: 12.375rem;
+    flex-shrink: 0;
+    border-radius: 1.25rem;
+    border: 4px solid rgba(255, 255, 255, 0.60);
+    background: #B4B7FF;
+    align-items: center;
+    justify-content: center;
+}
+
+.navigation_img2 {
+    display: flex;
+    width: 8.625rem;
+    height: 12.375rem;
+    flex-shrink: 0;
+    border-radius: 1.25rem;
+    border: 4px solid rgba(255, 255, 255, 0.60);
+    background: #97EAB9;
+    align-items: center;
+    justify-content: center;
+}
+
+.navigation_img3 {
+    display: flex;
+    width: 8.625rem;
+    height: 12.375rem;
+    flex-shrink: 0;
+    border-radius: 1.25rem;
+    border: 4px solid rgba(255, 255, 255, 0.60);
+    background: #FFD280;
+    align-items: center;
+    justify-content: center;    
+}
+
+.img1 {
+    width: 6.25rem;
+    height: 7.77925rem;
+    flex-shrink: 0;
+}
+
+.img2 {
+    width: 8.3125rem;
+    height: 10.1875rem;
+    flex-shrink: 0;
+}
+
+.img3 {
+    width: 7rem;
+    height: 11.875rem;
+    flex-shrink: 0;
+}
+
+.link {
+    color: #FF868E;
+    text-align: center;
+    font-family: Jost;
+    font-size: 0.75rem;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 1rem; /* 133.333% */
+    letter-spacing: 0.125rem;
+    text-transform: uppercase;
+    margin-top: 1.25rem;
+}
+
+.router_link {
+    text-decoration: none;
+}

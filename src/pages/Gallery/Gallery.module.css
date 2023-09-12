@@ -1,0 +1,125 @@
+.desc {
+    display: flex;
+}
+
+.page_title {
+    width: 9.125rem;
+    height: 2.5rem;
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 0.625rem;
+    background: #FF868E;
+    margin-left: 0.62rem;
+}
+
+.page_text {
+    color: #FFF;
+    text-align: center;
+    font-family: Jost;
+    font-size: 1.25rem;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 1.875rem; /* 150% */
+    letter-spacing: 0.125rem;
+    text-transform: uppercase;
+}
+
+.content {
+    margin-top: 0.62rem;
+    width: 42.5rem;
+    height: 48.875rem;
+    border-radius: 1.25rem;
+    background: #FFF;
+    padding: 1.25rem
+}
+
+.upload {
+    width: 8.9375rem;
+    height: 2.5rem;
+    flex-shrink: 0;
+    border-radius: 0.625rem;
+    background: #FBE0DC;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-left: auto
+}
+
+.upload_text {
+    color: #FF868E;
+    text-align: center;
+    font-family: Jost;
+    font-size: 0.75rem;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 1rem; /* 133.333% */
+    letter-spacing: 0.125rem;
+    text-transform: uppercase;
+    margin-left: 0.64rem;
+}
+
+.settings {
+    width: 40rem;
+    height: 9.75rem;
+    flex-shrink: 0;
+    border-radius: 1.25rem;
+    background: #F8F8F7;
+    margin-top: 1.25rem;
+    padding: 0.65rem 1.25rem 1.25rem 1.25rem;
+}
+
+.setting_row {
+    display: flex;
+    justify-content: space-between;
+}
+
+.setting_field {
+    display: flex;
+    flex-direction: column;
+}
+
+.label {
+    color: #8C8C8C;
+    font-family: Jost;
+    font-size: 0.625rem;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 1.125rem; /* 180% */
+    margin-left: 0.5rem;
+}
+
+.setting_select {
+    width: 18.125rem;
+    height: 2.5rem;
+    flex-shrink: 0;
+    border-radius: 0.625rem;
+    background: #FFF;
+    border: none;
+}
+
+.setting_select_short {
+    width: 15rem;
+    height: 2.5rem;
+    flex-shrink: 0;
+    border-radius: 0.625rem;
+    background: #FFF;
+    border: none;
+}
+
+.reload {
+    display: flex;
+    width: 2.5rem;
+    height: 2.5rem;
+    flex-shrink: 0;
+    border-radius: 0.625rem;
+    background: #FFF;
+    align-items: center;
+    justify-content: center;
+}
+
+.test {
+    display: flex;
+    gap: 0.63rem;
+}
