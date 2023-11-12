@@ -26,6 +26,7 @@ export const votingApi = createApi({
             query: (args) => ({
                 url: '/votes?sub_id=user-123'
             }),
+            providesTags:  ['POST']
         }),
     }),
     

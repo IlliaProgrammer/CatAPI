@@ -34,7 +34,7 @@ const GridComponent: React.FC<IGridPhoto> = ({ images }) => {
   };
   return (
     <div className={styles.container}>
-      {images.map((image, imageIndex) => (
+      {images.map((image, imageIndex: number) => (
         <div
           key={image.id}
           className={
@@ -59,7 +59,7 @@ const GridComponent: React.FC<IGridPhoto> = ({ images }) => {
                     checked={isSuccess && favourites.some((favorite: any) => favorite.image_id === image.id)}
                     onChange={() => toggleFavorite(image.id)}
                 />
-                <img src={image.url} alt={`Image ${imageIndex}`} className={styles.image} loading="lazy"/>
+                <img src={image.url} alt={`Image ${imageIndex}`} className={styles.image} loading="lazy" />
             </label>
            </span>
           }

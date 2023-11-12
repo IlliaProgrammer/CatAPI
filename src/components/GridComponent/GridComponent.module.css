@@ -71,3 +71,21 @@
   .checkbox:checked {
     background-image: url('data:image/svg+xml;charset=utf8,%3Csvg width="80" height="80" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"%3E%3Cpath d="M7 3c-1.536 0-3.078.5-4.25 1.7-2.343 2.4-2.279 6.1 0 8.5L12 23l9.25-9.8c2.279-2.4 2.343-6.1 0-8.5-2.343-2.3-6.157-2.3-8.5 0l-.75.8-.75-.8C10.078 3.5 8.535 3 7 3z" fill="%23e74c3c" /%3E%3C/svg%3E');
   }
+
+  @media (max-width: 768px) {
+    .container {
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: repeat(3, 8.75rem);
+        gap: 1.25rem;
+    }
+}
+
+/* For screens with a maximum width of 480px */
+@media (max-width: 480px) {
+    .container {
+        grid-template-columns: 100%;
+        grid-template-rows: repeat(6, 8.75rem);
+        gap: 1.25rem;
+        margin-left: 0;
+    }
+}

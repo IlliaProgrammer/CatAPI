@@ -36,7 +36,6 @@
 }
 
 .photo {
-
     width: 40rem;
     height: 22.5rem;
     border-radius: 1.25rem;
@@ -85,14 +84,86 @@
     height: 5rem;
 }
 
-
 .buttons li:first-child {
     background: #97EAB9;
     border-radius: 20px 0 0 20px;
 }
 
-
 .buttons li:last-child {
     background: #FFD280;
     border-radius: 0 20px 20px 0;
+}
+
+/* Responsive Styles */
+
+@media (max-width: 768px) {
+    .desc {
+        flex-direction: column;
+    }
+
+    .page_title {
+        margin-left: 0;
+        margin-bottom: 1rem;
+    }
+
+    .content {
+        width: 100%;
+        height: auto;
+    }
+
+    .photo {
+        width: 100%;
+        height: auto;
+    }
+
+    .photo_buttons {
+        width: 100%;
+        left: 0;
+        transform: none;
+    }
+
+    .buttons li {
+        width: 100%;
+    }
+
+    .buttons li:first-child,
+    .buttons li:last-child {
+        border-radius: 1.25rem;
+    }
+}
+
+@media (max-width: 360px) {
+    .desc {
+        flex-direction: column;
+        padding: 0.625rem;
+    }
+
+    .page_title {
+        margin-left: 0;
+        margin-bottom: 1rem;
+    }
+
+    .content {
+        width: 100%;
+        height: auto;
+        padding: 0.625rem;
+    }
+
+    .photo {
+        width: 100%;
+        height: auto;
+    }
+
+    .photo_buttons {
+        width: 100%;
+        left: 0;
+        transform: none;
+        top: -1.25rem;
+    }
+
+    .buttons {
+        width: 20%;
+        height: 2rem;
+    }
+
 }

@@ -26,3 +26,34 @@
     height: 1.875rem;
     flex-shrink: 0;
 }
+
+@media (max-width: 768px) {
+    .wrapper {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .button {
+        margin-left: 0;
+        margin-top: 0.62rem;
+    }
+}
+
+/* For screens with a maximum width of 360px */
+@media (max-width: 360px) {
+    .wrapper {
+        padding: 20px;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .button {
+        margin-left: 0;
+        margin-top: 0.62rem;
+    }
+
+    .buttons {
+        flex-direction: column;
+        align-items: center;
+    }
+}

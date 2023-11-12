@@ -12,12 +12,12 @@ import Loader from '../../components/Loader/Loader';
 
 
 const Voting = () => {
-    const {data: picture, isLoading, error, isSuccess} = galleryApi.useFetchAllGalleryQuery({ limit: 1,})
+    const {data: picture, isLoading, error, isSuccess, refetch} = galleryApi.useFetchAllGalleryQuery({ limit: 1,})
     const [addFavourite] = favoutiteApi.useAddFavouriteMutation(); 
     const [votingUp] = votingApi.useVoteUpMutation()
 
     if (!isSuccess) {
-        return <Loader />; // You can replace this with your loading indicator
+        return <Loader />; 
     }
     
 
@@ -27,10 +27,12 @@ const Voting = () => {
             "sub_id": "user-123",
             "value": 1
         })
+        refetch()
     }
 
     const handleFavPost = (imageId: string) => {
         addFavourite(imageId)
+        refetch()
     }
 
     const handleDislikePost = (imageId: string) => {
@@ -39,6 +41,7 @@ const Voting = () => {
             "sub_id": "user-123",
             "value": -1
         })
+        refetch()
     }
 
     return (

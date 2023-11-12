@@ -24,3 +24,73 @@
   overflow-y: scroll;
   overflow-x: hidden;
 }
+
+
+@media (min-width: 1281px) {
+}
+
+
+@media (min-width: 1025px) and (max-width: 1280px) {
+  .wrapper {
+    padding: 1.875rem;
+    gap: 2rem;
+  }
+
+  .navigation {
+    width: 20rem;
+    height: auto; 
+  }
+
+  .content {
+    width: calc(100% - 20rem);
+    max-width: 800px; 
+    height: auto;
+    overflow: visible;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 1024px) {
+  .wrapper {
+    flex-direction: column;
+    padding: 1.875rem;
+    gap: 2rem;
+  }
+
+  .navigation,
+  .content {
+    width: 100%;
+    height: auto;
+    overflow: visible;
+  }
+}
+
+
+@media (min-width: 481px) and (max-width: 767px) {
+  .wrapper {
+    flex-direction: column;
+    padding: 1.875rem;
+    gap: 2rem;
+  }
+
+  .navigation,
+  .content {
+    width: 100%;
+    height: auto; 
+    overflow: visible;
+  }
+}
+
+@media (min-width: 320px) and (max-width: 480px) {
+  .wrapper {
+    flex-direction: column;
+    padding: 1.875rem;
+    gap: 2rem;
+  }
+
+  .navigation,
+  .content {
+    width: 100%;
+    height: auto; 
+    overflow: visible;
+  }
+}
