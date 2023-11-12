@@ -12,7 +12,7 @@ import BreedPage from "./pages/BreedPage/BreedPage"
 interface Route {
     path: string;
     element: ReactNode;
-  }
+}
 
 export const RoutesArr:Route[] = [
     {

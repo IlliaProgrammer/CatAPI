@@ -4,6 +4,7 @@
     flex-shrink: 0;
     background-image: url(../../../assets/svg/default/backgr.svg);
     border: none;
+    cursor: pointer;
 }
 
 .arrow {

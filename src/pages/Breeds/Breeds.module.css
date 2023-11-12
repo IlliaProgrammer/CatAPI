@@ -43,6 +43,9 @@
     background: #F8F8F7;
     border: none;
     margin-left: 0.62rem;
+    -moz-appearance: none;
+    -webkit-appearance: none;
+    outline: none;
 }
 
 .setting_select_short {
@@ -53,6 +56,9 @@ width: 6.3125rem;
     background: #F8F8F7;
     border: none;
     margin-left: 0.62rem;
+    -moz-appearance: none;
+    -webkit-appearance: none;
+    outline: none;
 }
 
 .button {
@@ -60,4 +66,12 @@ width: 6.3125rem;
     height: 2.5rem;
     flex-shrink: 0;
     margin-left: 0.63rem;
+}
+
+.setting_select::after {
+    content: "";
+    justify-self: end;
+    width: 0.8em;
+    height: 0.5em;
+    clip-path: polygon(100% 0%, 0 0%, 50% 100%);
 }

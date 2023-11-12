@@ -1,43 +1,61 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { galleryApi } from '../../services/GalleryService';
 import GridComponent from '../GridComponent/GridComponent';
+import Loader from '../Loader/Loader';
 
-interface BreedsContainerProps {
-  limit: number;  
+interface GalleryContainerProps {
+  limit: number;
   selectedBreed: any;
   selectedOrder: string;
   selectedTypes: string;
+  refetchProp: boolean; 
+  setRefetchProp: any;
 }
 
-
-const GalleryContainer:React.FC<BreedsContainerProps> = ({limit, selectedBreed, selectedOrder, selectedTypes}) => { 
-    const {data: gallery, isLoading, error} = galleryApi.useFetchAllGalleryQuery({
+const GalleryContainer: React.FC<GalleryContainerProps> = ({
+  limit,
+  selectedBreed,
+  selectedOrder,
+  selectedTypes,
+  refetchProp,
+  setRefetchProp,
+}) => {
+  const { data: gallery, isLoading, error, refetch: galleryRefetch } =
+    galleryApi.useFetchAllGalleryQuery({
       breed: selectedBreed,
       limit: limit,
       order: selectedOrder,
       mime_types: selectedTypes,
-    })
+    });
 
-   
+    useEffect(() => {
+      const fetchData = async () => {
+        await galleryRefetch();
+        setRefetchProp(false);
+      };
+  
+      if (refetchProp) {
+        fetchData();
+      }
+    }, [refetchProp, galleryRefetch, setRefetchProp]);
 
-    if(isLoading){
-        return <div>loading</div>
-    }
 
-    const groupedImages = [];
-    for (let i = 0; i < gallery.length; i += 5) {
-      groupedImages.push(gallery.slice(i, i + 5));
-    }
+  if (!gallery || !Array.isArray(gallery)) {
+    return <Loader />;
+  }
 
-    console.log(groupedImages)
+  const groupedImages = [];
+  for (let i = 0; i < gallery.length; i += 5) {
+    groupedImages.push(gallery.slice(i, i + 5));
+  }
 
-    return (
-      <div>
+  return (
+    <div>
       {groupedImages.map((imageGroup, groupIndex) => (
-          <GridComponent key={groupIndex} images={imageGroup} />
-        ))}
-      </div>
-    );
+        <GridComponent key={groupIndex} images={imageGroup} />
+      ))}
+    </div>
+  );
 };
 
 export default GalleryContainer;

@@ -1,5 +1,5 @@
 import { createApi, fetchBaseQuery } from "@reduxjs/toolkit/query/react";
-import { IGallary } from '../models/IGallary';
+import { IGallary, IGallaryRoot, IGalleryProps } from '../models/IGallary';
 import { API_KEY } from "../utils/consts";
 
 export const galleryApi = createApi({
@@ -13,7 +13,7 @@ export const galleryApi = createApi({
     }),
     tagTypes: ["POST"],
     endpoints: (build) => ({
-        fetchAllGallery: build.query({
+        fetchAllGallery: build.query<IGallaryRoot, IGalleryProps>({
             query: (args) => ({
                 url: '/images/search',
                 params: {
@@ -33,7 +33,7 @@ export const galleryApi = createApi({
                 body: formData,
                 formData: true,
                 headers: {
-                    'content-type': 'multipart/form-data', // Set the appropriate content type for FormData
+                    'content-type': 'multipart/form-data', 
                 },
             }},
             invalidatesTags: ["POST"]

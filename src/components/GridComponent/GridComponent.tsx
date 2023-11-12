@@ -3,17 +3,12 @@ import styles from './GridComponent.module.css';
 import { Link, useLocation } from 'react-router-dom';
 import { BREEDS_ROUTE } from '../../utils/consts';
 import { favoutiteApi } from '../../services/FavouriteService';
+import { Ifav } from '../../models/IFavoutite';
 
 
 interface IGridPhoto {
-  images: {
-    breeds: any[];
-    id: string;
-    url: string;
-    width: number;
-    height: number;
-  }[];
-}
+  images: any[];
+} 
 
 const GridComponent: React.FC<IGridPhoto> = ({ images }) => {
   const location = useLocation();
@@ -22,20 +17,21 @@ const GridComponent: React.FC<IGridPhoto> = ({ images }) => {
   const { data: favourites, isSuccess } = favoutiteApi.useFetchAllFavouritesQuery(""); 
   const [addFavourite] = favoutiteApi.useAddFavouriteMutation(); 
   const [removeFavourite] = favoutiteApi.useRemoveFavouriteMutation();
-  
-  
 
   const toggleFavorite = async (imageId: string) => {
-
-    const isFavorited = favourites.some((favorite:any) => favorite.image_id === imageId);
-
+    const isFavorited = favourites?.some((favorite: Ifav) => favorite.image_id === imageId);
+    
     if (isFavorited) {
-      await removeFavourite(imageId); 
+      const favoriteToRemove = favourites?.find((favorite: Ifav) => favorite.image_id === imageId);
+      if (favoriteToRemove) {
+        await removeFavourite(favoriteToRemove.id);
+      } else {
+        console.error("Favorite to remove not found");
+      }
     } else {
-      await addFavourite({ image_id: imageId }); 
+      await addFavourite(imageId);
     }
   };
-
   return (
     <div className={styles.container}>
       {images.map((image, imageIndex) => (
@@ -51,18 +47,21 @@ const GridComponent: React.FC<IGridPhoto> = ({ images }) => {
         >
           {
             isBreedsPage ? 
-            <Link to={`/breed/${image.breeds[0]?.id}`}>
+            <Link to={`/breed/${image.breeds[0]?.id}`} className={styles.imageContainer}>
                 <p className={styles.breed}>{image.breeds[0]?.name}</p>
                 <img src={image.url} alt={`Image ${imageIndex}`} className={styles.image} />
             </Link> :
-            <>
-              <input
-                type="checkbox"
-                checked={isSuccess && favourites.some((favorite:any) => favorite.image_id === image.id)}
-                onChange={() => toggleFavorite(image.id)}
-              />
-              <img src={image.url} alt={`Image ${imageIndex}`} className={styles.image} />
-            </>
+           <span className={styles.imageContainer}>
+            <label>
+                <input
+                    type="checkbox"
+                    className={styles.checkbox}
+                    checked={isSuccess && favourites.some((favorite: any) => favorite.image_id === image.id)}
+                    onChange={() => toggleFavorite(image.id)}
+                />
+                <img src={image.url} alt={`Image ${imageIndex}`} className={styles.image} loading="lazy"/>
+            </label>
+           </span>
           }
         </div>
       ))}

@@ -1,5 +1,5 @@
 import { createApi, fetchBaseQuery } from "@reduxjs/toolkit/query/react";
-import { IGallary } from '../models/IGallary';
+import { IVotes } from "../models/IVotes";
 import { API_KEY } from "../utils/consts";
 
 export const votingApi = createApi({
@@ -22,5 +22,11 @@ export const votingApi = createApi({
             }},
             invalidatesTags: ["POST"]
         }),
-    })
+        fetchAllVotes: build.query<IVotes, string>({
+            query: (args) => ({
+                url: '/votes?sub_id=user-123'
+            }),
+        }),
+    }),
+    
 })

@@ -4,6 +4,7 @@ import ArrowBack from '../../components/UI/ArrowBack/ArrowBack';
 import { galleryApi } from '../../services/GalleryService';
 import styles from "./BreedPage.module.css"
 import { useParams } from 'react-router-dom';
+import Loader from '../../components/Loader/Loader';
 
 const BreedPage = () => {
     const {id} = useParams()
@@ -11,6 +12,12 @@ const BreedPage = () => {
         breed: id,
         limit: 5,
     })
+
+    console.log(picture)
+
+    if (!picture) {
+        return <Loader />;
+      }
 
     const scrollToSlide = (index: number) => {
         const slideElement = document.getElementById(`slide-${index}`);

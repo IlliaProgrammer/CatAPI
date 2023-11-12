@@ -5,7 +5,7 @@ import nav1 from "../../assets/images/nav1.png"
 import nav2 from "../../assets/images/nav2.png"
 import nav3 from "../../assets/images/nav3.png"
 import styles from "../Navbar/Navbar.module.css"
-import { Link } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
 import { BREEDS_ROUTE, GALLERY_ROUTE, VOTING_ROUTE } from '../../utils/consts';
 
 const Navbar = () => {
@@ -23,28 +23,28 @@ const Navbar = () => {
                 <p className={styles.navigation_title}>Lets start using The Cat API</p>
                 <ul className={styles.navigation_buttons}>
                     <li className={styles.navigation_button}>
-                        <Link to={VOTING_ROUTE} className={styles.router_link}>
+                        <NavLink to={VOTING_ROUTE} className={styles.router_link}>
                             <div className={styles.navigation_img1}>
                                 <img src={nav1} alt="" className={styles.img1}/>
                             </div>
                             <p className={styles.link}>Voting</p>
-                        </Link> 
+                        </NavLink> 
                     </li>
                     <li className={styles.navigation_button}>
-                    <Link to={BREEDS_ROUTE} className={styles.router_link}>
-                        <div className={styles.navigation_img2}>
-                            <img src={nav2} alt="" className={styles.img2}/>
-                        </div>
-                        <p className={styles.link}>breeds</p>
-                    </Link>
+                        <NavLink to={BREEDS_ROUTE} className={styles.router_link}>
+                            <div className={styles.navigation_img2}>
+                                <img src={nav2} alt="" className={styles.img2}/>
+                            </div>
+                            <p className={styles.link}>breeds</p>
+                        </NavLink>
                     </li>
                     <li className={styles.navigation_button}>
-                    <Link to={GALLERY_ROUTE} className={styles.router_link}>
-                        <div className={styles.navigation_img3}>
-                            <img src={nav3} alt="" className={styles.img3}/>
-                        </div>
-                        <p className={styles.link}>GALLERY</p>
-                    </Link>
+                        <NavLink to={GALLERY_ROUTE} className={styles.router_link}>
+                            <div className={styles.navigation_img3}>
+                                <img src={nav3} alt="" className={styles.img3}/>
+                            </div>
+                            <p className={styles.link}>GALLERY</p>
+                        </NavLink>
                     </li>
                 </ul>
             </div>

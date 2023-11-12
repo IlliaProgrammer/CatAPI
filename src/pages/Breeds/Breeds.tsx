@@ -12,7 +12,10 @@ const Breeds = () => {
 
     const [selectedBreed, setSelectedBreed] = useState("");
     const [selectedLimit, setSelectedLimit] = useState(10);
+    const [selectedOrder, setSelectedOrder] = useState("RANDOM");
     const { data: breeds, isError: isBreedsError, isLoading: isBreedsLoading, isSuccess } = breedsApi.useFetchAllBreedsQuery("");
+
+
 
     const onBreedSelectChange = (e:any) => {
             setSelectedBreed(e.target.value);
@@ -29,8 +32,6 @@ const Breeds = () => {
       if(isBreedsError){
         <div>eroor</div>
       }
-      console.log(selectedBreed)
-      console.log(breeds)
 
     return (
         <div>
@@ -55,15 +56,15 @@ const Breeds = () => {
                                 <option value="15">15</option>
                                 <option value="20">20</option>
                     </select>
-                    <div className={styles.button}>
+                    <div className={styles.button} onClick={()=>setSelectedOrder("ASC")}>
                         <img src={sortUp}/>
                     </div>
-                    <div className={styles.button}>
+                    <div className={styles.button} onClick={()=>setSelectedOrder("DESC")}>
                         <img src={sortDown}/>
                     </div>
                 </div>
                 
-                <BreedsContainer selectedBreed={selectedBreed} limit={selectedLimit}/>
+                <BreedsContainer breed={selectedBreed} limit={selectedLimit} order={selectedOrder}/>
             </div>
         </div>
     );

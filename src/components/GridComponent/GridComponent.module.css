@@ -7,12 +7,13 @@
 
 
 .image {
-display: block;
-width: 100%;
-height: 100%;
-object-fit: cover;
-border-radius: 1.25rem;
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 1.25rem;
 }
+
 
 .container {
     display: grid; 
@@ -21,8 +22,52 @@ border-radius: 1.25rem;
     gap: 1.25rem 1.25rem; 
     margin-top: 2.5rem;
     margin-left: -1.25rem;
+
   }
+
+  .imageContainer {
+    transition: filter 0.3s;
+    position: relative;
+}
+
+.imageContainer:hover .image {
+  filter: brightness(40%);
+}
+
+.imageContainer:hover .breed {
+  opacity: 1;
+}
 
   .breed {
     z-index: 100;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: white;
+    text-transform: uppercase;
+    opacity: 0;
+    font-weight: 600;
+  }
+
+
+  .checkbox {
+    z-index: 5;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    opacity: 0;
+    appearance: none;
+    height: 62px;
+    width: 62px;
+    background: url('data:image/svg+xml;charset=utf8,%3Csvg xmlns="http://www.w3.org/2000/svg" width="80" height="80" viewBox="0 0 60 60"%3E%3Cpath fill="%23FF868E" d="M23.0711 19C19.7181 19 17 21.7181 17 25.0711C17 26.6812 17.6396 28.2254 18.7782 29.364L30 40.5858L41.2218 29.364C42.3604 28.2254 43 26.6812 43 25.0711C43 21.7181 40.2819 19 36.9289 19C35.3188 19 33.7746 19.6396 32.636 20.7782L30.7071 22.7071C30.3166 23.0976 29.6834 23.0976 29.2929 22.7071L27.364 20.7782C26.2254 19.6396 24.6812 19 23.0711 19ZM15 25.0711C15 20.6135 18.6135 17 23.0711 17C25.2116 17 27.2646 17.8503 28.7782 19.364L30 20.5858L31.2218 19.364C32.7354 17.8503 34.7884 17 36.9289 17C41.3865 17 45 20.6135 45 25.0711C45 27.2116 44.1497 29.2646 42.636 30.7782L30.7071 42.7071C30.3166 43.0976 29.6834 43.0976 29.2929 42.7071L17.364 30.7782C15.8503 29.2646 15 27.2116 15 25.0711Z" /%3E%3C/svg%3E') no-repeat center/cover;;
+  }
+  
+  .checkbox:hover {
+    opacity: 1;
+  }
+
+  .checkbox:checked {
+    background-image: url('data:image/svg+xml;charset=utf8,%3Csvg width="80" height="80" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"%3E%3Cpath d="M7 3c-1.536 0-3.078.5-4.25 1.7-2.343 2.4-2.279 6.1 0 8.5L12 23l9.25-9.8c2.279-2.4 2.343-6.1 0-8.5-2.343-2.3-6.157-2.3-8.5 0l-.75.8-.75-.8C10.078 3.5 8.535 3 7 3z" fill="%23e74c3c" /%3E%3C/svg%3E');
   }

@@ -117,14 +117,15 @@
     color: #FF868E;
     text-align: center;
     font-family: Jost;
-    font-size: 0.75rem;
+    font-size: 0.9rem;
     font-style: normal;
     font-weight: 500;
-    line-height: 1rem; /* 133.333% */
+    line-height: 1rem;
     letter-spacing: 0.125rem;
     text-transform: uppercase;
     margin-top: 1.25rem;
 }
+
 
 .router_link {
     text-decoration: none;
