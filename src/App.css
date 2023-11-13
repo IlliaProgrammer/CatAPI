@@ -1,10 +1,11 @@
 .wrapper {
   display: flex;
   height: 56.25rem;
-  padding: 1.875rem 1.875rem 1.875rem 9.1875rem;
   align-items: flex-start;
   gap: 8.5625rem;
+  padding-top: 1.75rem;
   background: #F8F8F7;
+  justify-content: center;
 }
 
 .navigation {

@@ -1,3 +1,4 @@
+import { IVote, IVotePost } from './../models/IVotes';
 import { createApi, fetchBaseQuery } from "@reduxjs/toolkit/query/react";
 import { IVotes } from "../models/IVotes";
 import { API_KEY } from "../utils/consts";
@@ -13,7 +14,7 @@ export const votingApi = createApi({
     }),
     tagTypes: ["POST"],
     endpoints: (build) => ({
-        voteUp: build.mutation({
+        voteUp: build.mutation<IVote, IVotePost>({
             query: (up) => {
                 return{
                 url: '/votes',

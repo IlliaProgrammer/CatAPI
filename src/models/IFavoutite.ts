@@ -13,3 +13,9 @@ export interface Image {
   id: string
   url: string
 }
+
+
+export interface IFavRes {
+  message: string
+  id: number
+}

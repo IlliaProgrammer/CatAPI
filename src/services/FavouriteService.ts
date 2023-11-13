@@ -1,5 +1,6 @@
+import { IFavRes, IFavRoot } from './../models/IFavoutite';
 import { createApi, fetchBaseQuery } from "@reduxjs/toolkit/query/react";
-import { IFavRoot } from "../models/IFavoutite";
+
 
 import { API_KEY } from "../utils/consts";
 
@@ -19,7 +20,7 @@ export const favoutiteApi = createApi({
             query: () => '/favourites',
             providesTags:  ['Post']
           }),
-          addFavourite: build.mutation({
+          addFavourite: build.mutation<IFavRes, string>({
             query: (imageId) => ({
               url: '/favourites',
               method: 'POST',
@@ -27,7 +28,7 @@ export const favoutiteApi = createApi({
             }),
             invalidatesTags: ['Post']
           }),
-          removeFavourite: build.mutation({
+          removeFavourite: build.mutation<IFavRes, number>({
             query: (favouriteId) => ({
               url: `/favourites/${favouriteId}`,
               method: 'DELETE',
