@@ -39,12 +39,13 @@
     }
 }
 
-/* For screens with a maximum width of 360px */
-@media (max-width: 360px) {
+
+ @media (min-width: 320px) and (max-width: 480px){
     .wrapper {
         padding: 20px;
         flex-direction: column;
         align-items: center;
+        width: 50%;
     }
 
     .button {

@@ -43,3 +43,9 @@
     font-weight: 400;
     line-height: 1.875rem;
 }
+
+@media (min-width: 320px) and (max-width: 480px) {
+    .top{
+       
+    }
+  }

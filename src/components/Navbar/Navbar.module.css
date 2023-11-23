@@ -130,3 +130,22 @@
 .router_link {
     text-decoration: none;
 }
+
+@media (max-width: 480px) {
+    .navigation  {
+        width: 100%;
+        height: auto;
+    }
+
+    .greet,
+    .info,
+    .navigation_title{
+        margin-left: 20px;
+    }
+
+    .navigation_img1,
+    .navigation_img2,
+    .navigation_img3{
+        width: 95%;
+    }
+  }
